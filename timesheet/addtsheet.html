@@ -1,0 +1,39 @@
+.modal.fade#activityModal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title Add an Activity
+      .modal-body
+        form#activityForm
+          .form-group
+            label(for="jobName") Job
+            input(type="text" name="job" required="").form-control
+          .form-group
+            label(for="description") Description of Works
+            input(type="text" name="description" required="").form-control
+          .form-group
+            label(for="hours") Total Hours
+            input(type="text" name="hours" required="").form-control
+          .modal-footer
+            button.btn.btn-primary#modalSubmit(type="submit") Submit
+            button.btn.btn-danger#modalClose(data-dismiss="modal") Close
+.container
+  .panel.panel-info
+    .panel-heading
+      h4 Add a Timesheet
+    .table-responsive
+        .panel-body
+          table.table#timesheet
+            thead
+              tr
+                th(scope="col") Job Name
+                th(scope="col") Job No.
+                th(scope="col") Description of Works
+                th(scope="col") Total Hours
+                th(scope="col")#rowBtns
+            tbody#tsdata
+          button.btn.btn-success.btn-sm#addrow(data-toggle="modal" data-target="#activityModal")
+            span.glyphicon.gylphicon.glyphicon-plus
+            span  Add Activity
+          h5 Total Hours: 
+    button.btn.btn-primary.btn.pull-right#submitTable Submit
